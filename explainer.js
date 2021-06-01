@@ -31,3 +31,21 @@ fetch(url)
 .then(function(data) {
     let authors = data.results;
 })
+
+//step 6 map function to return individual data points
+return authors.map(function(author) {
+
+})
+
+//GET ==FETCH. retrieving data
+//POST== send data to a server, stored in the HTTP request, if send multiple times, multiplies the resource
+//PUT== send data to server (always get same result)
+
+
+//https://api.github.com/users?results=10
+
+
+// data lands on the console
+// fetch('https://dog.ceo/api/breed/borzoi/images/random')
+//   .then(response => response.json())
+//   .then(data => console.log(data));
