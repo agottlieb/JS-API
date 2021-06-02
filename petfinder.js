@@ -2,6 +2,15 @@ const key = 'WLVwJ1gR1OOZa9UNOyW9vycEPfNPjewF4UEeXF1Ja0WsnDdFrR';
 const secret = 'onQSkU6i2CNIxXThRhvhBm0qz5G0HDG8nsFQpFEA';
 const org = 'RI77';
 const status = 'adoptable';
+const ul = document.getElementById('pet-info');
+
+function createNode(element) {
+    return document.createElement(element);
+}
+
+function append(parent, el) {
+  return parent.appendChild(el);
+}
 
 // Call the API to get the OAuth token
 // POST request: we need the API to generate a new token for us
@@ -40,7 +49,22 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
 	// Log the pet data
 	console.log('pets', data);
 
-}).catch(function (err) {
+//start here for print to HTML 
+let names = data.animals; 
+	return names.map(function(pet) {
+		let li = createNode('li');
+		let img = createNode('img');
+		let span = createNode('span');
+		img.src = pet.primary_photo_cropped.small;
+		span.innerHTML = `${pet.name}`;
+		append(li, img);
+		append(li, span);
+		append(ul, li);
+	})
+
+})
+
+.catch(function (err) {
 
 	// Log any errors
 	console.log('something went wrong', err);
