@@ -1,6 +1,4 @@
-// const key = 'WLVwJ1gR1OOZa9UNOyW9vycEPfNPjewF4UEeXF1Ja0WsnDdFrR';
 const key = config.MY_API_TOKEN;
-// const secret = 'onQSkU6i2CNIxXThRhvhBm0qz5G0HDG8nsFQpFEA';
 const secret = config.SECRET_API_KEY;
 const org = 'RI77';
 const status = 'adoptable';
