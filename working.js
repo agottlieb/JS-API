@@ -32,7 +32,7 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
 
 	// Return a second API call
 	// This one uses the token we received for authentication
-	return fetch('https://api.petfinder.com/v2/animals?&status=' + status, {
+	return fetch('https://api.petfinder.com/v2/animals?organization=' + org + '&status=' + status, {
 		headers: {
 			'Authorization': data.token_type + ' ' + data.access_token,
 			'Content-Type': 'application/x-www-form-urlencoded'

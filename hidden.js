@@ -1,5 +1,7 @@
-const key = 'WLVwJ1gR1OOZa9UNOyW9vycEPfNPjewF4UEeXF1Ja0WsnDdFrR';
-const secret = 'onQSkU6i2CNIxXThRhvhBm0qz5G0HDG8nsFQpFEA';
+// const key = 'WLVwJ1gR1OOZa9UNOyW9vycEPfNPjewF4UEeXF1Ja0WsnDdFrR';
+const key = config.MY_API_TOKEN;
+// const secret = 'onQSkU6i2CNIxXThRhvhBm0qz5G0HDG8nsFQpFEA';
+const secret = config.SECRET_API_KEY;
 const org = 'RI77';
 const status = 'adoptable';
 const ul = document.getElementById('pet-info');
@@ -32,7 +34,7 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
 
 	// Return a second API call
 	// This one uses the token we received for authentication
-	return fetch('https://api.petfinder.com/v2/animals?&status=' + status, {
+	return fetch('https://api.petfinder.com/v2/animals?organization=' + org + '&status=' + status, {
 		headers: {
 			'Authorization': data.token_type + ' ' + data.access_token,
 			'Content-Type': 'application/x-www-form-urlencoded'
