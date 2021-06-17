@@ -1,6 +1,5 @@
 const key = config.MY_API_TOKEN;
 const secret = config.SECRET_API_KEY;
-const org = 'RI77';
 const status = 'adoptable';
 const ul = document.getElementById('pet-info');
 
@@ -32,7 +31,7 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
 
 	// Return a second API call
 	// This one uses the token we received for authentication
-	return fetch('https://api.petfinder.com/v2/animals?organization=' + org + '&status=' + status, {
+	return fetch('https://api.petfinder.com/v2/animals?breed=pug' + '&status=' + status, {
 		headers: {
 			'Authorization': data.token_type + ' ' + data.access_token,
 			'Content-Type': 'application/x-www-form-urlencoded'
@@ -55,7 +54,8 @@ let names = data.animals;
 		let li = createNode('li');
 		let img = createNode('img');
 		let span = createNode('span');
-		img.src = pet.primary_photo_cropped.small;
+		if (pet.primary_photo_cropped != null) { 
+			img.src = pet.primary_photo_cropped.small}
 		span.innerHTML = `${pet.name}`;
 		append(li, img);
 		append(li, span);

@@ -8,6 +8,3 @@ Using fetch API to get Data
 https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data
 
 
-Issues:
-hide OAuth token
-a different org?
