@@ -2,6 +2,7 @@ const key = config.MY_API_TOKEN;
 const secret = config.SECRET_API_KEY;
 const status = 'adoptable';
 const ul = document.getElementById('pet-info');
+const userInput = document.getElementById('breed');
 
 function createNode(element) {
     return document.createElement(element);
@@ -31,7 +32,7 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
 
 	// Return a second API call
 	// This one uses the token we received for authentication
-	return fetch('https://api.petfinder.com/v2/animals?breed=pug' + '&status=' + status, {
+	return fetch('https://api.petfinder.com/v2/animals?breed=poodle' + '&status=' + status, {
 		headers: {
 			'Authorization': data.token_type + ' ' + data.access_token,
 			'Content-Type': 'application/x-www-form-urlencoded'
