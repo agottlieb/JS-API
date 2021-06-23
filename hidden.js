@@ -3,6 +3,8 @@ const secret = config.SECRET_API_KEY;
 const status = 'adoptable';
 const ul = document.getElementById('pet-info');
 const userInput = document.getElementById('breed');
+const value = userInput.value;
+const submit = document.getElementById('submit');
 
 function createNode(element) {
     return document.createElement(element);
@@ -11,6 +13,16 @@ function createNode(element) {
 function append(parent, el) {
   return parent.appendChild(el);
 }
+
+function handleSubmit (event) {
+	event.preventDefault();
+}
+
+submit.addEventListener('submit', handleSubmit);
+
+// var form = document.getElementById("myForm");
+// function handleForm(event) { event.preventDefault(); } 
+// form.addEventListener('submit', handleForm);
 
 // Call the API to get the OAuth token
 // POST request: we need the API to generate a new token for us
@@ -32,7 +44,7 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
 
 	// Return a second API call
 	// This one uses the token we received for authentication
-	return fetch('https://api.petfinder.com/v2/animals?breed=poodle' + '&status=' + status, {
+	return fetch('https://api.petfinder.com/v2/animals?breed=' + value + '&status=' + status, {
 		headers: {
 			'Authorization': data.token_type + ' ' + data.access_token,
 			'Content-Type': 'application/x-www-form-urlencoded'
