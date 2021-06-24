@@ -3,7 +3,7 @@ const secret = config.SECRET_API_KEY;
 const status = 'adoptable';
 const ul = document.getElementById('pet-info');
 const userInput = document.getElementById('breed');
-const value = userInput.value;
+const breed = userInput.value;
 const submit = document.getElementById('submit');
 
 function createNode(element) {
@@ -14,11 +14,14 @@ function append(parent, el) {
   return parent.appendChild(el);
 }
 
+
+
 function handleSubmit (event) {
 	event.preventDefault();
+	//function to change value of breed to new value
 }
 
-submit.addEventListener('submit', handleSubmit);
+submit.addEventListener('click', handleSubmit);
 
 // var form = document.getElementById("myForm");
 // function handleForm(event) { event.preventDefault(); } 
@@ -44,7 +47,7 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
 
 	// Return a second API call
 	// This one uses the token we received for authentication
-	return fetch('https://api.petfinder.com/v2/animals?breed=' + value + '&status=' + status, {
+	return fetch('https://api.petfinder.com/v2/animals?breed=' + breed + '&status=' + status, {
 		headers: {
 			'Authorization': data.token_type + ' ' + data.access_token,
 			'Content-Type': 'application/x-www-form-urlencoded'
