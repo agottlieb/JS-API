@@ -1,0 +1,14 @@
+<select id="leaveCode" name="leaveCode">
+  <option value="10">Annual Leave</option>
+  <option value="11">Medical Leave</option>
+  <option value="14">Long Service</option>
+  <option value="17">Leave Without Pay</option>
+</select>
+
+function selectElement(id, valueToSelect) {    
+    let element = document.getElementById(id);
+    element.value = valueToSelect;
+}
+
+selectElement('leaveCode', '11')
+

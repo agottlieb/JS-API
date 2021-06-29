@@ -15,10 +15,12 @@ function append(parent, el) {
 }
 
 
-
+	//function to change value of breed to new value
 function handleSubmit (event) {
 	event.preventDefault();
-	//function to change value of breed to new value
+	let option = userInput;
+	option.value = breed
+
 }
 
 submit.addEventListener('click', handleSubmit);
