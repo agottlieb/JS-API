@@ -2,9 +2,8 @@ const key = config.MY_API_TOKEN;
 const secret = config.SECRET_API_KEY;
 const status = 'adoptable';
 const ul = document.getElementById('pet-info');
-const userInput = document.getElementById('breed');
-const breed = userInput.value;
 const submit = document.getElementById('submit');
+let breed;
 
 function createNode(element) {
     return document.createElement(element);
@@ -17,10 +16,9 @@ function append(parent, el) {
 
 //function to change value of breed to new value
 function handleSubmit (event) {
-	event.preventDefault();
-	// let option = userInput;
-	// option.value = breed
-
+    event.preventDefault();
+    const userInput = document.getElementById('breed');
+    breed = userInput.value;
 }
 
 submit.addEventListener('click', handleSubmit);
