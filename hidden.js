@@ -17,10 +17,13 @@ function append(parent, el) {
 //function to change value of breed to new value
 function handleSubmit (event) {
     event.preventDefault();
+    //attempts to clear data
+    // document.getElementById('ul').reset();
+    // document.getElementById('ul').value='';
     const userInput = document.getElementById('breed');
     breed = userInput.value;
 
-    //zip code and style
+    //zip code, return only if pic? 
     //every time handlesubmit is called, clear the results
 
     fetch('https://api.petfinder.com/v2/oauth2/token', {
