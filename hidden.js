@@ -20,7 +20,7 @@ function handleSubmit (event) {
     const userInput = document.getElementById('breed');
     breed = userInput.value;
 
-    //clear before append, zip code and style
+    //zip code and style
     //every time handlesubmit is called, clear the results
 
     fetch('https://api.petfinder.com/v2/oauth2/token', {
@@ -86,9 +86,4 @@ function handleSubmit (event) {
 
 submit.addEventListener('click', handleSubmit);
 
-// var form = document.getElementById("myForm");
-// function handleForm(event) { event.preventDefault(); } 
-// form.addEventListener('submit', handleForm);
 
-// Call the API to get the OAuth token
-// POST request: we need the API to generate a new token for us
