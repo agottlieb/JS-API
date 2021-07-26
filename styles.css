@@ -32,3 +32,19 @@ span {
     display: block;
     padding-top: 1rem;
 }
+
+input {
+    margin: 1.5rem;
+}
+
+#breed {
+    padding: .5rem;
+}
+
+#location {
+    padding: .5rem;
+}
+
+#submit {
+    padding: .5rem;
+}
