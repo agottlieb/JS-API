@@ -68,7 +68,9 @@ function handleSubmit (event) {
             let li = createNode('li');
             let img = createNode('img');
             let span = createNode('span');
-            if (pet.primary_photo_cropped != null) { 
+            if (pet.primary_photo_cropped == null) {
+                img.src = 'images/paw.svg';
+            } else { 
                 img.src = pet.primary_photo_cropped.small}
                
             span.innerHTML = `${pet.name}`;

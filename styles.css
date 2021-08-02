@@ -23,6 +23,7 @@ li {
 
 img {
     border-radius: 25px;
+    max-width: 15rem;
 }
 
 span {
