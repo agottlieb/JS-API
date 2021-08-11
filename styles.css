@@ -38,6 +38,15 @@ input {
     margin: 1.5rem;
 }
 
+a:link {
+    color:#064163;
+    text-decoration: none;
+}
+
+/* a :visited {
+color: green;
+} */
+
 #breed {
     padding: .5rem;
 }
