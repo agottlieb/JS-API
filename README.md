@@ -1,8 +1,7 @@
-This API project is a combination of two beginner tuotorials: one in using OAuth tokens with vanilla JS and the other in using fetch API data to get data on a website. Initially I hid the API key, but I also wanted to display the dog pictures. Since the information is not 
-particularly sensitive, I decided to leave the API key visible. 
+This API project is a combination of two beginner tuotorials: one that teaches how to use OAuth tokens with vanilla JS, and the other that teaches how to fetch API data and record it to a website. Initially I hid the API key because it's generally not a good idea to have them public, but I also wanted others to be able to use the website without copying and pasting the API.  Since the information is not particularly sensitive, I decided to leave the API key visible. 
+
 
 Here are the resources I used:
-
 Basic format is from Chris Ferdinandi with vanilla js:
 https://gomakethings.com/using-oauth-with-fetch-in-vanilla-js/
 
