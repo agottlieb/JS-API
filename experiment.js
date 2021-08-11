@@ -73,8 +73,7 @@ function handleSubmit (event) {
             } else { 
                 img.src = pet.primary_photo_cropped.small}
                
-            span.innerHTML = `${pet.name}`;
-            span.href = pet.url;
+            span.innerHTML = `<a href=${pet.url}> ${pet.name} </a>`;
             append(li, img);
             append(li, span);
             append(ul, li);
