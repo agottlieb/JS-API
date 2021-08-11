@@ -4,7 +4,7 @@ const status = 'adoptable';
 const ul = document.getElementById('pet-info');
 const submit = document.getElementById('submit');
 let breed;
-// let location;
+let doglocation;
 
 function createNode(element) {
     return document.createElement(element);
@@ -24,8 +24,8 @@ function handleSubmit (event) {
     const userInput = document.getElementById('breed');
     breed = userInput.value;
 
-    // const locationInput =document.getElementById('location');
-    // location = locationInput.value;
+    const locationInput =document.getElementById('location');
+    doglocation = locationInput.value;
 
     fetch('https://api.petfinder.com/v2/oauth2/token', {
         method: 'POST',
@@ -45,7 +45,7 @@ function handleSubmit (event) {
     
         // Return a second API call
         // This one uses the token we received for authentication
-        return fetch('https://api.petfinder.com/v2/animals?breed=' + breed + '&status=' + status, {
+        return fetch('https://api.petfinder.com/v2/animals?breed=' + breed + '&location=' + doglocation + '&status=' + status, {
             headers: {
                 'Authorization': data.token_type + ' ' + data.access_token,
                 'Content-Type': 'application/x-www-form-urlencoded'
